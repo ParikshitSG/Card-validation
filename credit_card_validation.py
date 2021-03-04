@@ -18,7 +18,7 @@ def checksum(card_number):
     
     final_sum = odd_digits_sum + even_digits_sum
     
-    return final_sum
+    return final_sum % 10
 
 
 def is_valid(card_number):
@@ -33,9 +33,9 @@ def is_valid(card_number):
     if card_number.isnumeric() != True:  # to check if there are only numbers
         return False
     
-    final_sum = checksum(card_number)
+    final_checksum_sum = checksum(card_number)
     
-    return (final_sum % 10) == 0
+    return final_checksum_sum == 0
 
 
 def get_brand(card_number, cvv):

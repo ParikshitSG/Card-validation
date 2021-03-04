@@ -16,7 +16,7 @@ def test_checksum_len13():
     assert ccr.checksum('4346537657597') == 9
 
 def test_checksum_len14():
-    assert ccr.checksum('27184931073326') == 2
+    assert ccr.checksum('27184931073326') == 1
 
 def test_valid():
     assert ccr.is_valid('356938035643809')

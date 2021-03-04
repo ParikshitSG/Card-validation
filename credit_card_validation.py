@@ -58,7 +58,7 @@ def get_brand(card_number, cvv):
     brands = ["Visa", "Mastercard", "American Express" ,"Discover", "Diners Club Carte Blanche"]
     
     # rules applied according to brand specifications:
-    # Visa cards – Begin with a 4 and have 13 or 16 digits
+    # Visa cards – Begin with a 4 and have 16 digits
     # Mastercard cards – Begin with a 5 and has 16 digits
     # American Express cards – Begin with a 3, followed by a 4 or a 7  has 15 digits
     # Discover cards – Begin with a 6 and have 16 digits
@@ -74,9 +74,6 @@ def get_brand(card_number, cvv):
                 return "This is a {}".format(brands[1])
             elif(card_number.startswith("6")):
                 return "This is a {} card".format(brands[3])
-            
-        elif (len(card_number)==13) and (card_number.startswith("4")):
-            return "This is a {} card".format(brands[0])
         
         elif (len(card_number)==14) and (card_number.startswith("30") or card_number.startswith("36") or card_number.startswith("38") ):    
                 return "This is a {} card".format(brands[4])

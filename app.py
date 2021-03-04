@@ -7,7 +7,12 @@ app.config["DEBUG"] = True
 # Gets the checksum value for credit card no.
 @app.route('/getChecksum/<cardNumber>', methods=['GET'])
 def checksum(cardNumber):
-	return str(ccv.checksum(str(cardNumber)))
+    cardNumber = cardNumber.replace(" ","")
+
+     # to check if there are only numbers
+    if cardNumber.isnumeric() != True:
+    	return "Invalid card number"
+    return str(ccv.checksum(str(cardNumber)))
 
 # checks if the no. is valid or not
 @app.route('/isValid/<cardNumber>', methods=['GET'])

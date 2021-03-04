@@ -6,7 +6,11 @@ def checksum(card_number):
     input : string i.e card number
     return : integer i.e checksum value
     '''
-    
+    card_number = card_number.replace(" ","")
+
+    if card_number.isnumeric() != True:  # to check if there are only numbers
+        return "Invalid card number"
+        
     digits = list(map(int,card_number))
     
     odd_digits = digits[-1::-2]

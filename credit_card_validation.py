@@ -59,9 +59,9 @@ def get_brand(card_number, cvv):
     
     # rules applied according to brand specifications:
     # Visa cards – Begin with a 4 and have 13 or 16 digits
-    # Mastercard cards – Begin with a 5 and has 16 digits#
+    # Mastercard cards – Begin with a 5 and has 16 digits
     # American Express cards – Begin with a 3, followed by a 4 or a 7  has 15 digits
-    # Discover cards – Begin with a 6 and have 16 digits#
+    # Discover cards – Begin with a 6 and have 16 digits
     # Diners Club and Carte Blanche cards – Begin with a 3, followed by a 0, 6, or 8 and have 14 digits
     # CVV codes are a 3-digit number for Visa, Mastercard, and Discover cards, and a 4-digit number for Amex.
     
@@ -71,14 +71,14 @@ def get_brand(card_number, cvv):
             if(card_number.startswith("4")):
                 return "This is a {} card".format(brands[0])
             elif(card_number.startswith("5")):
-                return "This is a {} card".format(brands[1])
+                return "This is a {}".format(brands[1])
             elif(card_number.startswith("6")):
                 return "This is a {} card".format(brands[3])
             
         elif (len(card_number)==13) and (card_number.startswith("4")):
             return "This is a {} card".format(brands[0])
         
-        elif (len(card_number)==14)and(card_number.startswith("30") or card_number.startswith("36") or card_number.startswith("38") ):    
+        elif (len(card_number)==14) and (card_number.startswith("30") or card_number.startswith("36") or card_number.startswith("38") ):    
                 return "This is a {} card".format(brands[4])
             
     elif (len(cvv) == 4) and (len(card_number)==15) and (card_number.startswith("34") or card_number.startswith("37")):

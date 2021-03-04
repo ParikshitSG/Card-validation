@@ -51,4 +51,4 @@ def test_cvv_invalid():
 	assert ccr.get_brand('4222222222a22222',"1a3") == "Invalid cvv!"
 
 def test_cvv_invalid2():
-	assert ccr.get_brand('356938035643809',"54632") == "Unknown card brand"
+	assert ccr.get_brand('4532127071054225',"54632") == "Unknown card brand"
